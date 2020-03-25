@@ -6,7 +6,14 @@ let appName = process.argv
 let outputPath = appName; //=== "bimq" ? "bimq" : "shidai";
 console.log(appName);
 console.log(IS_PROD);
-
+process.argv.forEach((val, index) => {
+  console.log(`${index}: ${val}`);
+});
+const config = {
+  shidai: {
+    ip: ""
+  }
+};
 module.exports = {
   productionSourceMap: false,
   // publicPath: IS_PROD ? "../" + outputPath + "/" : "./",
@@ -24,7 +31,7 @@ module.exports = {
   devServer: {
     proxy: {
       "/api": {
-        target: "<url>",
+        target: config[appName].ip,
         ws: true,
         changeOrigin: true
       },
