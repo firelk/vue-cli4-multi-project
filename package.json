@@ -1,0 +1,53 @@
+{
+  "name": "webfront_cli4.1",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --bimq",
+    "build": "vue-cli-service build --bimq",
+    "serve_bimq": "vue-cli-service serve --bimq",
+    "build_bimq": "vue-cli-service build --bimq",
+    "serve_shidai": "vue-cli-service serve --shidai",
+    "build_shidai": "vue-cli-service build --shidai",
+    "test:unit": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint",
+    "prev": "npm install && npm run build && pm2 startOrRestart start.config.js --env prev",
+    "production": "npm install && npm run build && pm2 startOrRestart start.config.js --env production",
+    "zip": "vue-cli-service zip:build",
+    "zip-version-major": "npm run build && gulp packageMajorVersion",
+    "zip-version-minor": "npm run build && gulp packageMinorVersion",
+    "zip-version-patch": "npm run build && gulp packagePatchVersion",
+    "zip-version-prerelease": "npm run build && gulp packagePrereleaseVersion"
+  },
+  "dependencies": {
+    "core-js": "^3.6.4",
+    "element-ui": "^2.13.0",
+    "vue": "^2.6.11",
+    "vue-router": "^3.1.5",
+    "vuex": "^3.1.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.2.0",
+    "@vue/cli-plugin-eslint": "~4.2.0",
+    "@vue/cli-plugin-router": "~4.2.0",
+    "@vue/cli-plugin-unit-jest": "~4.2.0",
+    "@vue/cli-plugin-vuex": "~4.2.0",
+    "@vue/cli-service": "~4.2.0",
+    "@vue/test-utils": "1.0.0-beta.31",
+    "archiver": "^3.0.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.1.2",
+    "fs": "0.0.1-security",
+    "gulp": "^4.0.0",
+    "gulp-bump": "^3.1.1",
+    "gulp-git": "^2.8.0",
+    "gulp-zip": "^4.2.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2",
+    "semver": "^5.4.1",
+    "vue-cli-plugin-build-zip": "^0.0.3",
+    "vue-cli-plugin-zip-version": "^1.0.9",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
