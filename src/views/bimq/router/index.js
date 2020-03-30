@@ -19,10 +19,16 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ "../../About.vue")
   }
 ];
+console.log("process.env.FOO");
+console.log(process.env);
+console.log(process.env.VUE_APP_SECRET);
+console.log(process.env.FOO);
+console.log(process.env.FOO);
+console.log(process.env.FOO);
 
 const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
+  // mode: "history",
+  // base: process.env.BASE_URL,
   routes
 });
 

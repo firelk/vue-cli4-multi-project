@@ -5,8 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve --bimq",
     "build": "vue-cli-service build --bimq",
-    "serve_bimq": "vue-cli-service serve --bimq",
-    "build_bimq": "vue-cli-service build --bimq",
+    "serve_bimq": "cross-env BASE_URL=bimq vue-cli-service serve --bimq",
+    "build_bimq": "cross-env BASE_URL=bimq vue-cli-service build --bimq",
     "serve_shidai": "vue-cli-service serve --shidai",
     "build_shidai": "vue-cli-service build --shidai",
     "test:unit": "vue-cli-service test:unit",
@@ -21,7 +21,9 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
+    "cross-env": "^7.0.2",
     "element-ui": "^2.13.0",
+    "global": "^4.4.0",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",
     "vuex": "^3.1.2"

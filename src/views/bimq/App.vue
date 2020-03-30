@@ -1,6 +1,8 @@
 <template>
-  <div id="app">
-    bimq
+  <div
+    id="app"
+    class="bimq style-default"
+  >
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -15,9 +17,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #f90;
 }
-
+.home {
+  img {
+  }
+}
 #nav {
   padding: 30px;
 

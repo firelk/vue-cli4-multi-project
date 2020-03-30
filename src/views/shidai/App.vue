@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    shidai
+    <h1>{{name}}</h1>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -8,7 +8,17 @@
     <router-view />
   </div>
 </template>
-
+<script>
+export default {
+  name: ''
+  ,
+  data () {
+    return {
+      name: process.env.VUE_APP_PRO
+    }
+  }
+}
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

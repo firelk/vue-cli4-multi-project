@@ -4,14 +4,18 @@ let appName = process.argv
   .reverse()[0]
   .replace("--", "");
 let outputPath = appName; //=== "bimq" ? "bimq" : "shidai";
-console.log(appName);
+console.log(process.env.VUE_APP_PRO);
 console.log(IS_PROD);
-process.argv.forEach((val, index) => {
-  console.log(`${index}: ${val}`);
-});
+process.env.VUE_APP_PRO = appName;
+// process.argv.forEach((val, index) => {
+//   console.log(`${index}: ${val}`);
+// });
 const config = {
+  bimq: {
+    ip: "http://10.1.80.68"
+  },
   shidai: {
-    ip: ""
+    ip: "http://10.1.80.68"
   }
 };
 module.exports = {
@@ -38,6 +42,18 @@ module.exports = {
       "/foo": {
         target: "<other_url>"
       }
+    }
+  },
+  configureWebpack: config => {
+    console.log("config");
+    console.log(config);
+    console.log("process.env.NODE_ENV");
+    console.log(process.env.NODE_ENV);
+
+    if (process.env.NODE_ENV === "production") {
+      // 为生产环境修改配置...
+    } else {
+      // 为开发环境修改配置...
     }
   }
 };
